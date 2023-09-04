@@ -1,0 +1,99 @@
+// Import your color variables from 'colors-vars.module.scss'
+@import 'colors-vars.module.scss';
+
+.footer-container {
+  background-color: $grey50; // Use your color variable
+  padding: 30px 0;
+  font-family: 'open sans';
+  
+
+  .company-links {
+    display: flex;
+    align-items: center;
+    
+    
+    color: $grey500; // Use your color variable
+    font-size: 16px;
+    font-weight: 550;
+    
+    li {
+      display: inline-block;
+      margin-right: 20px; /* Add spacing between company links */
+
+    :hover {
+      color: $grey900; // Change link color on hover to a lighter shade
+    }
+    }
+  }
+  
+  .company-name {
+    font-size: 20px;
+    font-family: 'open sans';
+    color: $grey500; // Use your color variable
+    margin-left: 20px;
+
+ 
+  }
+  
+  .social-media {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; 
+  }
+}
+
+//Button without border
+.button {
+  display: inline-block;
+  padding: 20px 30px; // Adjust padding as needed
+  color: $primary800 !important; // Text color is the primary color
+  font-size: 18px; // Adjust font size as needed
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s, border-radius 0.2s; // Add smooth transitions
+
+  &:hover {
+    background-color: $primaryLight;
+    border-radius: 4px;// Increase border-radius on hover for a slight curve
+  }
+}
+
+//Button with filled
+.buttonDefault {
+  display: inline-block;
+  padding: 15px 25px; // Adjust padding as needed
+  border: 2px solid $grey50; // Use your color variable for the outer border
+  background-color: $primaryDark; // Use your color variable for the background color (blue)
+  border-radius: 5px; // Adjust the border-radius for slight curve
+  color: $paper; // Set text color to white using your color variable
+  font-size: 16px; // Adjust font size as needed
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s; // Add a smooth transition
+
+  &:hover {
+    background-color: $primary800; // Change background color on hover to dark blue using your color variable
+  }
+}
+
+.outlined-button {
+  display: inline-block;
+  padding: 10px 30px; // Adjust padding as needed
+  border: 2px solid $grey300; // Use your color variable for the border color (#4682B4)
+  background-color: transparent; // Background is transparent for outlined button
+  border-radius: 4px; // Adjust the border-radius for slight curve
+  color: $primaryMain; // Set text color to blue using your color variable
+  font-size: 16px; // Adjust font size as needed
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s; // Add smooth transitions for color changes
+
+  &:hover {
+    background-color: $primaryLight; // Change background color on hover to blue using your color variable
+    color: $paper; // Change text color to white on hover using your color variable
+    border: 2px solid $primaryDark;
+    color: $primary800;
+  }
+}
+      
