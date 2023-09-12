@@ -10,10 +10,10 @@ function App() {
   return (
   
     <>
-      <Home />
+      {/* <Home /> */}
 
       
-     
+     <h2 className="text-center">Hello React</h2>
     </>
 
   );
