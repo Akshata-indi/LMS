@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { FaFacebook, FaTwitter, FaLinkedin } from 'react-icons/fa'; // Import the icons
 import footerConfig from '../footer/footerConfig.json'
