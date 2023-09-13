@@ -1,0 +1,27 @@
+[
+    {
+      "label": "First Name",
+      "type": "text"
+     
+    },
+    {
+      "label": "Last Name",
+      "type": "text"
+      
+    },
+    {
+      "label": "Email",
+      "type": "email"
+      
+    },
+    {
+    "label": "Password",
+      "type": "password"
+     
+    },
+    {
+        "label": "Phone Number",
+        "type": "tel"
+        
+    }
+]                                                  
