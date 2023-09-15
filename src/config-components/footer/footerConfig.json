@@ -1,31 +1,25 @@
 {
   "companyName": "Infokalash",
+  "companyAddress": "Deshpande Startups Sandbox, Gokul Rd, near to Airport, Hubbali, Karnataka 580030",
+  "subscription": "Subscribe to our News later",
+
   "companyLinks": [
-    { "label": "About", "url": "/about-company" },
-    { "label": "Products", "url": "/products" },
-    { "label": "Privacy", "url": "/privacy" },
-    { "label": "Terms", "url": "/terms" }
+    { "label": "Home", "url": "/about-company" },
+    { "label": "Services", "url": "/products" },
+    { "label": "About Us", "url": "/privacy" },
+    { "label": "Contact Us", "url": "/terms" }
   ],
   "socialMedia": [
-    { "icon": "facebook", "url": "https://facebook.com" },
-    { "icon": "twitter", "url": "https://twitter.com" },
-    { "icon": "linkedin", "url": "https://linkedin.com" }
+    { "icon": "linkedin", "url": "https://www.linkedin.com/company/infokalash-it-services/mycompany/" },
+    { "icon": "youtube", "url": "https://www.youtube.com/channel/UCZfw2TysAP_H3VxyTnYUWeA" },
+    { "icon": "instagram", "url": "https://www.instagram.com/infokalash/" }
   ],
- 
- 
+
+  
+  "logoUrl": "../../assets/images/logo.png", 
   "styles": {
-    "backgroundColor": "bg-gray-200",
+    "backgroundColor": "bg-gray-100",
     "paddingTop": "pt-8",
-    "paddingBottom": "pb-14",
-    "companyNameFontSize": "text-xl",
-    "companyNameFontWeight": "font-semibold",
-    "textColor": "text-gray-500",
-    "companyLinksFontSize": "text-base",
-    "companyLinksFontWeight": "font-semibold",
-    "companyLinksSpacing": "space-x-6",
-    "socialMediaFontSize": "text-xl",
-    "socialMediaIconColor": "text-gray-500",
-    "socialMediaIconHoverColor": "hover:text-gray-700",
-    "socialMediaIconHoverTransition": "transition duration-300"
+    "paddingBottom": "pt-20" 
   }
 }

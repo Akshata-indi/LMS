@@ -7,14 +7,16 @@ import TailwindInputsConfig from './TailwindInputsConfig';
 const DynamicInputs = () => {
 
   const inputStyle = TailwindInputsConfig.standard;
+  const inputstyle2 = TailwindInputsConfig.boxInput;
   
 return (   
     <div className='grid grid-cols-1'>
     {/* <input className={tailwindInputsConfig.text}>
        First Name
     </input> */}
-    <input className={inputStyle} type="text" placeholder="Enter your firstname" />
-    <input className={inputStyle} type="text" placeholder="Enter your lastname" />
+    {/* <input className={inputStyle} type="text" placeholder="your email" /> */}
+
+    <input className={inputstyle2} type="email" placeholder="your email" />
     </div>
     );
   };
