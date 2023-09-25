@@ -1,4 +1,7 @@
 
+
+
+
 import Home from '../src/Pages/home/Home'
 
 function App() {
@@ -11,5 +14,6 @@ function App() {
   );
 }
 
+  
 export default App;
 

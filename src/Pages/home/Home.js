@@ -1,12 +1,32 @@
 import React from 'react'
-import Footer from '../../config-components/footer/Footer'
-function Home() {
-    return (
+
+
+// import DynamicInputs from '../../config-components/inputs/DynamicInputs'
+// import Header from '../../config-components/header/Header';
+// import BodySection from '../../config-components/body-section/BodySection';
+import Card from '../../config-components/cards/Card';
+
+
+
+
+
+
+
+const Home = () => {
+  return (
     <div>
-      <Footer />
+       {/* <Header /> */}
+      {/* <BodySection/> */} 
+      <Card/>
+     
+      
+    
+     
+
     </div>
-  
-    );
-  }
-  
-  export default Home;
+  )
+}
+
+export default Home
+
+
