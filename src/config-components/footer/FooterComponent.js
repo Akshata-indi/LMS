@@ -54,12 +54,7 @@ const FooterComponent = () => {
           <p className="text-sm mt-10 font-semibold" >{subscription}</p>
         </div>
 
-        {/* <div className="flex items-center">
-          <DynamicInputs />
-          <button className={`${TwdButtonsConfig.primary} text-sm px-5 py-2.5 text-center mr-2 mb-2`}>
-          Subscribe
-          </button>
-        </div> */}
+       
 
 <form>
   <div class="flex flex-col rounded-lg overflow-hidden sm:flex-row p-2">
