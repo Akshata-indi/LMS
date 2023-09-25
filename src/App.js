@@ -1,10 +1,16 @@
-import Home from "./Pages/home/Home"
+
+
+
+
+import Home from '../src/Pages/home/Home'
 
 function App() {
   return (
-      <>
-    <Home /> 
-     </> 
+  <div>
+    <Home />
+
+  </div>
+
   );
 }
 

@@ -20,11 +20,18 @@ const Header = () => {
             Get Started
             </button>  
             </div>
+
           
         </div>
     </div>
      
 </div>
+
+
+            
+    
+
+
 )
 }
 

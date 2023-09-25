@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 // import DynamicInputs from '../../config-components/inputs/DynamicInputs'
 // import Header from '../../config-components/header/Header';
 // import BodySection from '../../config-components/body-section/BodySection';
@@ -27,4 +28,5 @@ const Home = () => {
 }
 
 export default Home
+
 

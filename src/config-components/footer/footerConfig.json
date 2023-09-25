@@ -1,0 +1,25 @@
+{
+  "companyName": "Infokalash",
+  "companyAddress": "Deshpande Startups Sandbox, Gokul Rd, near to Airport, Hubbali, Karnataka 580030",
+  "subscription": "Subscribe to our News later",
+
+  "companyLinks": [
+    { "label": "Home", "url": "/about-company" },
+    { "label": "Services", "url": "/products" },
+    { "label": "About Us", "url": "/privacy" },
+    { "label": "Contact Us", "url": "/terms" }
+  ],
+  "socialMedia": [
+    { "icon": "linkedin", "url": "https://www.linkedin.com/company/infokalash-it-services/mycompany/" },
+    { "icon": "youtube", "url": "https://www.youtube.com/channel/UCZfw2TysAP_H3VxyTnYUWeA" },
+    { "icon": "instagram", "url": "https://www.instagram.com/infokalash/" }
+  ],
+
+  
+  "logoUrl": "../../assets/images/logo.png", 
+  "styles": {
+    "backgroundColor": "bg-gray-100",
+    "paddingTop": "pt-8",
+    "paddingBottom": "pt-20" 
+  }
+}
