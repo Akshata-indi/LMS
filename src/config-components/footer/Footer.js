@@ -1,6 +1,5 @@
 import FooterComponent from '../footer/FooterComponent'
 
-//footer
 function Footer() {
   return (
       <div className="flex flex-col min-h-screen">
