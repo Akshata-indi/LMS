@@ -1,0 +1,20 @@
+[
+    {
+      "label": "Dashboard",
+      "url": "/dashboard",
+      "classes": "block text-gray-500 hover:text-blue-500 font-semibold py-4 px-6"
+    },
+    {
+      "label": "User",
+      "url": "/user",
+      "classes": "block text-black hover:text-blue-500 font-semibold px-6 mx-4 "
+    },
+    {
+      "label": "Chart",
+      "url": "/chart",
+      "classes": "block text-black hover:text-blue-500 px-6 mx-4 font-semibold"
+    }
+    
+   
+  ]
+  
