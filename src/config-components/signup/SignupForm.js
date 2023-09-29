@@ -22,7 +22,7 @@ const SignupForm = () => {
         <input className={inputStyle} type="password" placeholder="Confirm Password" /> 
         </div>
         
-        <div className="text-center">
+        <div className="text-center mt-5">
           <button type="submit" className={`${TwdButtonsConfig.primary} text-lg`}>
             Submit
           </button>

@@ -8,11 +8,11 @@ import { Link } from 'react-router-dom';
 
 const LoginForm = () => {
   const inputStyle = TailwindInputsConfig.standard;
-  const { rememberMeLabel, forgotPasswordText, signupText, signupUrl } = loginConfig;
+  const { rememberMeLabel, forgotPasswordText, signupText } = loginConfig;
 
   
   return (
-    
+    <div className='flex flex-col items-center'>
     <div className="mx-auto mt-2 p-10 bg-white rounded-xl shadow-2xl flex flex-col items-center">
       <BsBoxArrowInRight className="text-6xl text-blue-600 mb-4" />
       <form className="w-full">
@@ -33,7 +33,7 @@ const LoginForm = () => {
             </label>
           </div>
           <div className="text-right">
-            <a href="#" className="text-gray-500 hover:underline">
+            <a href="/" className="text-gray-500 hover:underline">
               {forgotPasswordText}
             </a>
           </div>
@@ -53,6 +53,14 @@ const LoginForm = () => {
         </div>
       </form>
     </div>
+      <p className="mt-8 text-gray-500 font-sans text-base font-semibold">
+            Ready to get started?
+      </p>
+      <p className="mt-8 text-gray-500 font-sans text-base font-semibold">
+            Launch Your Project with Us
+      </p>
+    </div>
+    
   );
 };
 
