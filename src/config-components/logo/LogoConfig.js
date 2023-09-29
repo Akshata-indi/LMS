@@ -4,9 +4,15 @@ const LogoConfig = () => (
 
   <img
     src={logo}
-    className="w-11 min-w-8"
+    className="w-11 min-w-9 mx-1"
     alt="Logo "
   />
  
-);
-export default LogoConfig; 
+); header/add-header
+export default LogoConfig;
+
+  
+
+
+
+

@@ -1,28 +1,25 @@
+// const cardsConfig = [
+//   {
+//     id: 'card1', // Unique identifier for the card
+//     size: 'w-56 h-40', // Tailwind CSS classes for sizing
+//     color: 'bg-white', // Background color class
+//     style: 'rounded-md border border-gray-500 shadow-lg px-10', 
+//   },
+// ];
+
+ 
+// export default cardsConfig;
+
 const cardsConfig = [
   {
-    "title": "Card 1",
-    "description": "Description for Card 1",
-    "imageSrc": "path-to-image-1.jpg",
-    "backgroundColor": "bg-blue-500",
-    "width": "w-64",
-    "height": "h-48",
-    "cardStyle": "rounded-md shadow-md",
-    
+    id: 'card1',
+    className: 'w-44 h-24 bg-white rounded-md border border-gray-300 shadow-lg', // Add width and height classes
   },
   {
-    "title": "Card 2",
-    "description": "Description for Card 2",
-    "imageSrc": "path-to-image-2.jpg",
-    "backgroundColor": "bg-green-500",
-    "width": "w-72",
-    "height": "h-56",
-    "cardStyle": "rounded-lg shadow-lg",
-    
+    id: 'card2',
+    className: 'w-96 h-96 bg-white rounded-md border border-gray-300 shadow-lg', // Add width and height classes
   },
-  {
-  card1: 'w-72 h-56 bg-blue-500 rounded-lg shadow-lg'
- 
-  }
 ];
 
 export default cardsConfig;
+
