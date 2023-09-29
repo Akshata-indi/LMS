@@ -8,7 +8,7 @@ const LogoConfig = () => (
     alt="Logo "
   />
  
-); header/add-header
+); 
 export default LogoConfig;
 
   
