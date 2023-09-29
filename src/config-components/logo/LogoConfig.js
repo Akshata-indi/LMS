@@ -14,5 +14,5 @@ export default LogoConfig;
   
 
 
-export default LogoConfig; 
+
 
