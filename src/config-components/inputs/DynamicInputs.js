@@ -14,9 +14,10 @@ return (
     {/* <input className={tailwindInputsConfig.text}>
        First Name
     </input> */}
-    {/* <input className={inputStyle} type="text" placeholder="your email" /> */}
+    <input className={inputStyle} type="text" placeholder="Email / Username" />
 
-    <input className={inputstyle2} type="email" placeholder="your email" />
+
+    {/* <input className={inputstyle2} type="email" placeholder="your email" /> */}
     </div>
     );
   };

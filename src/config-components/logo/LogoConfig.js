@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../../assets/images/logo.png';
 const LogoConfig = () => (
-  
+
   
   <img
     src={logo}
@@ -10,7 +10,9 @@ const LogoConfig = () => (
   />
  
 );
+
 export default LogoConfig;
 
   
+
 
