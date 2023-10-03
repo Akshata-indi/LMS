@@ -1,6 +1,6 @@
 import React from 'react'
-import Login from '../../config-components/login/Login'
-// import Landing from '../../LandingConfig/Landing'
+// import Login from '../../config-components/login/Login'
+import Landing from '../../LandingConfig/Landing'
 // import Body2 from '../../config-components/cards/Body2'
 
 
@@ -25,8 +25,8 @@ const Home = () => {
       {/* <BodySection/> */} 
        {/* <Body2 /> */}
       {/* <Sidebar /> */}
-     {/* <Landing /> */}
-     <Login />
+     <Landing />
+     {/* <Login /> */}
      
       
     
