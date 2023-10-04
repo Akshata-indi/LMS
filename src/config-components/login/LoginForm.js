@@ -39,7 +39,7 @@ const LoginForm = () => {
   });
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center justify-center mt-12 bg-white">
       <div className="mx-auto mt-2 p-10 bg-white rounded-xl shadow-2xl flex flex-col items-center">
         <BsBoxArrowInRight className="text-6xl text-blue-600 mb-4" />
         <form className="w-full" onSubmit={formik.handleSubmit}>

@@ -14,7 +14,7 @@ function Login() {
       
     {/* <Header1/> */}
     <Header2/>
-    <div className="flex justify-center items-center min-h-screen bg-white">
+    <div>
     <Router>
       <Routes>
         <Route path="/" element={<LoginForm />} />

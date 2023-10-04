@@ -10,7 +10,7 @@ function Signup() {
   return (
     <div>
     
-    <div className="flex justify-center items-center min-h-screen bg-white">
+    <div className="flex justify-center items-center mt-10 bg-white">
       <SignupForm />
     </div>
     </div>
