@@ -1,3 +1,4 @@
+//LoginForm.js
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
@@ -22,7 +23,7 @@ const LoginForm = () => {
       password: '',
     },
     validationSchema,
-    onSubmit: async (values) => {
+    onSubmit: async (values, { resetForm }) => {
       try {
         const response = await axios.get(`http://localhost:3001/data?email=${values.email}&password=${values.password}`);
         const loginUser = response.data;
