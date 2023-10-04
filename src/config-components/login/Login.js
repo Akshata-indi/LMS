@@ -13,8 +13,12 @@ function Login() {
     <div>
       
     {/* <Header1/> */}
+    <Header2/>
+    <div>
+
     {/* <Header2/> */}
     <div className="flex justify-center items-center min-h-screen bg-white">
+
     <Router>
       <Routes>
         <Route path="/" element={<LoginForm />} />
