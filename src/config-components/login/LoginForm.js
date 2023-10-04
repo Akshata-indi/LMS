@@ -102,10 +102,10 @@ const LoginForm = () => {
           </div>
         </form>
       </div>
-      <p className="mt-8 text-gray-500 font-sans text-base font-semibold">
+      <p className="mt-8 text-gray-500 font-sans text-sm font-semibold">
         Ready to get started?
       </p>
-      <p className="mt-8 text-gray-500 font-sans text-base font-semibold">
+      <p className="mt-2 text-gray-500 font-sans text-sm font-semibold">
         Launch Your Project with Us
       </p>
     </div>
