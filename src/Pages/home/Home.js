@@ -1,12 +1,11 @@
 import React from 'react'
-// import Login from '../../config-components/login/Login'
 import Landing from '../../LandingConfig/Landing'
-// import Body2 from '../../config-components/cards/Body2'
+// i   mport Body1 from '../../config-components/cards/Body1'
 
 
   // import Sidebar from '../../sidebar/Sidebar'
 // import DynamicInputs from '../../config-components/inputs/DynamicInputs'
-// import Header1 from '../../config-components/header/Header1';
+// import Header from '../../config-components/header/Header';
 // import BodySection from '../../config-components/body-section/BodySection';
 
 
@@ -21,12 +20,11 @@ import Landing from '../../LandingConfig/Landing'
 const Home = () => {
   return (
     <div>
-       {/* <Header1 /> */}
+       {/* <Header /> */}
       {/* <BodySection/> */} 
-       {/* <Body2 /> */}
+       {/* <Body1 /> */}
       {/* <Sidebar /> */}
      <Landing />
-     {/* <Login /> */}
      
       
     

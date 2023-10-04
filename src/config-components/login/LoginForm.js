@@ -9,12 +9,11 @@ import { BsBoxArrowInRight } from 'react-icons/bs';
 
 const LoginForm = () => {
   const inputStyle = TailwindInputsConfig.standard;
-
   const navigate = useNavigate();
-
   const validationSchema = Yup.object({
-    email: Yup.string().required('Email is required').email('Invalid email format'),
-    password: Yup.string().required('Password is required'),
+    
+  email: Yup.string().required('Email is required').email('Invalid email format'),
+  password: Yup.string().required('Password is required'),
   });
 
   const formik = useFormik({
@@ -32,8 +31,8 @@ const LoginForm = () => {
           navigate('/landing');
         }
       } catch (error) {
-        console.log(error);
-        alert('Invalid user');
+          console.log(error);
+          alert('Invalid user');
       }
     },
   });
