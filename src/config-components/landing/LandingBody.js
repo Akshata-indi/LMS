@@ -8,12 +8,6 @@ import Body1 from '../config-components/cards/Body1';
 import Body2 from '../config-components/cards/Body2';
 >>>>>>> master:src/LandingConfig/LandingBody.js
 
-
-
-
-
-
-
 const LandingBody = () => {
    
     return (
