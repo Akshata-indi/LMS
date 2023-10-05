@@ -1,5 +1,6 @@
 import React from 'react'
 import Landing from '../../LandingConfig/Landing'
+import Login from '../../config-components/login/Login'
 // i   mport Body1 from '../../config-components/cards/Body1'
 
 
@@ -24,7 +25,8 @@ const Home = () => {
       {/* <BodySection/> */} 
        {/* <Body1 /> */}
       {/* <Sidebar /> */}
-     <Landing />
+     {/* <Landing /> */}
+     <Login/>
      
       
     
