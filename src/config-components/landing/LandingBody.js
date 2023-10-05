@@ -1,19 +1,19 @@
 import React from 'react';
-import Header1 from '../config-components/header/Header1';
-import Sidebar from '../sidebar/Sidebar';
-import Body1 from '../config-components/cards/Body1';
-import Body2 from '../config-components/cards/Body2';
-import Search from '../config-components/header/Search';
-import LogoConfig from '../config-components/logo/LogoConfig';
+import Header1 from '../header/Header1';
 
 
-const LandingConfig = () => {
+
+
+
+
+
+const LandingBody = () => {
+   
     return (
         <div className='grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8'>
             <div className='grid grid-rows-[auto,1fr] '>
-                    <Header1 logo={LogoConfig} /> 
-                    
-                    
+                    <Header1  /> 
+{/*                     
                 <div className='grid grid-cols-12 gap-4'>
                      <div className='col-span-2 w-60 border border-r-gray-200 '> 
                         <Sidebar />
@@ -25,10 +25,10 @@ const LandingConfig = () => {
                             <Body1 />
                             <Body2 />
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         );
 }
 
-export default LandingConfig;
+export default LandingBody;
