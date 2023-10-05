@@ -7,16 +7,16 @@ const Header1 = () => {
         <div className='grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8'>
 
             <div className='grid grid-cols-1 grid-flow-row'>
-<<<<<<< HEAD
+
                 <div className='grid grid-cols-12 w-screen bg-white shadow-md min-h-[70px] flex items-center'>
-=======
+
                 <div className='grid grid-cols-12 bg-white shadow-sm min-h-[70px] border border-gray-500 flex  justify-between items-center'>
->>>>>>> master
+
                     {/* <LogoConfig /> */}
                 </div>
             </div>
         </div>
-
+</div>
     )
 }
 
