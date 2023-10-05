@@ -3,8 +3,14 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Signup from '../signup/Signup'; // Your signup component
 import LoginForm from './LoginForm';
+<<<<<<< HEAD
+import Landing from '../../landing/Landing';
+// import Header2 from '../header/Header2'
+// import Header1 from '../header/Header1';
+=======
 import Landing from '../../LandingConfig/Landing';
 import Header2 from '../header/Header2'
+>>>>>>> master
 
 function Login() {
   return (
