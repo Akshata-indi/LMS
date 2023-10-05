@@ -13,11 +13,11 @@
 const cardsConfig = [
   {
     id: 'card1',
-    className: "w-44 h-24 sm:w-64 sm:h-32 md:w-72 md:h-40 bg-white rounded-md border border-gray-300 shadow-lg p-4", // Add width and height classes
+    className: 'w-44 h-24 bg-white rounded-md border border-gray-300 shadow-lg', // Add width and height classes
   },
   {
     id: 'card2',
-    className: 'w-80 h-96 bg-white rounded-md border border-gray-300 shadow-lg', // Add width and height classes
+    className: 'w-96 h-96 bg-white rounded-md border border-gray-300 shadow-lg', // Add width and height classes
   },
 ];
 

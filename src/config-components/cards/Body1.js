@@ -9,7 +9,7 @@ const CardComponent = ({ id, className }) => (
 
 const Body1 = () => {
   // Define the ID of the card you want to render
-  const cardIdToRender = 'card2';
+  const cardIdToRender = 'card1';
 
   // Find the card with the specified ID in the configuration
   const cardToRender = cardsConfig.find((card) => card.id === cardIdToRender);

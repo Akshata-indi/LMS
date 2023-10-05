@@ -1,3 +1,4 @@
+//LoginForm.js
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
@@ -9,12 +10,11 @@ import { BsBoxArrowInRight } from 'react-icons/bs';
 
 const LoginForm = () => {
   const inputStyle = TailwindInputsConfig.standard;
-
   const navigate = useNavigate();
-
   const validationSchema = Yup.object({
-    email: Yup.string().required('Email is required').email('Invalid email format'),
-    password: Yup.string().required('Password is required'),
+    
+  email: Yup.string().required('Email is required').email('Invalid email format'),
+  password: Yup.string().required('Password is required'),
   });
 
   const formik = useFormik({
@@ -23,7 +23,7 @@ const LoginForm = () => {
       password: '',
     },
     validationSchema,
-    onSubmit: async (values) => {
+    onSubmit: async (values, { resetForm }) => {
       try {
         const response = await axios.get(`http://localhost:3001/data?email=${values.email}&password=${values.password}`);
         const loginUser = response.data;
@@ -32,14 +32,14 @@ const LoginForm = () => {
           navigate('/landing');
         }
       } catch (error) {
-        console.log(error);
-        alert('Invalid user');
+          console.log(error);
+          alert('Invalid user');
       }
     },
   });
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center justify-center mt-12 bg-white">
       <div className="mx-auto mt-2 p-10 bg-white rounded-xl shadow-2xl flex flex-col items-center">
         <BsBoxArrowInRight className="text-6xl text-blue-600 mb-4" />
         <form className="w-full" onSubmit={formik.handleSubmit}>
@@ -102,10 +102,10 @@ const LoginForm = () => {
           </div>
         </form>
       </div>
-      <p className="mt-8 text-gray-500 font-sans text-base font-semibold">
+      <p className="mt-8 text-gray-500 font-sans text-sm font-semibold">
         Ready to get started?
       </p>
-      <p className="mt-8 text-gray-500 font-sans text-base font-semibold">
+      <p className="mt-2 text-gray-500 font-sans text-sm font-semibold">
         Launch Your Project with Us
       </p>
     </div>
