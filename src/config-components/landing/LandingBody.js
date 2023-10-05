@@ -1,12 +1,6 @@
 import React from 'react';
 import Header1 from '../header/Header1';
 
-
-
-
-
-
-
 const LandingBody = () => {
    
     return (
