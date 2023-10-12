@@ -1,41 +1,97 @@
-
-  
-
-// <div class="flex h-screen bg-gray-100">
-  
-//   <div class="w-64 bg-white border-r">
-//   {/* <nav className="space-y-2 px-6 py-4">
-//     <a href="/home" className="block text-gray-600 hover:text-blue-500">Home</a>
-//     <a href="/about" className="block text-gray-600 hover:text-blue-500">About</a>
-//     <a href="/services" className="block text-gray-600 hover:text-blue-500">Services</a>
-    
-//   </nav> */}
-
-
-
-
 import React from 'react';
-import config from './config.json'
+import MenuData from './MenuData'; // Import your MenuData object
 
 const Sidebar = () => {
   return (
-    <div className='grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8'>
-    <div className="flex bg-white border border-r-gray-500 h-screen bg-gray-100">
-    {/* <div className="w-64 bg-white border-r"> */}
-      
+    <div className="flex flex-col bg-white border border-r-gray-200  h-screen  sm:w-60 md:w-72 lg:w-80 xl:w-96">
+      {/* Render the main menu items */}
+      <nav>
+        {MenuData.default.menu && (
+          <a href={MenuData.default.menu.url} className={MenuData.default.menu.classes}>
+            {MenuData.default.menu.label}
+          </a>
+        )}
+      </nav>
 
+      {/* Render the submenus for menu */}
+      <nav>
+        {MenuData.default.menu.submenus.map((submenu) => (
+          <a key={submenu.url} href={submenu.url} className={submenu.classes}>
+            {submenu.label}
+          </a>
+        ))}
+      </nav>
 
-      {/* Navigation Links */}
-      <nav className=" ">
-        {config.map((link) => (
-          <a key={link.url} href={link.url} className={link.classes}>
-            {link.label}
+      {/* Render the main menu items for menu1 */}
+      <nav>
+        {MenuData.default.menu1 && (
+          <a href={MenuData.default.menu1.url} className={MenuData.default.menu1.classes}>
+            {MenuData.default.menu1.label}
+          </a>
+        )}
+      </nav>
+
+      {/* Render the submenus for menu1 */}
+      <nav>
+        {MenuData.default.menu1.submenus.map((submenu) => (
+          <a key={submenu.url} href={submenu.url} className={submenu.classes}>
+            {submenu.label}
+          </a>
+        ))}
+      </nav>
+
+      {/* Render the main menu items for menu1 */}
+      <nav>
+        {MenuData.default.menu2 && (
+          <a href={MenuData.default.menu2.url} className={MenuData.default.menu2.classes}>
+            {MenuData.default.menu2.label}
+          </a>
+        )}
+      </nav>
+
+      {/* Render the submenus for menu1 */}
+      <nav>
+        {MenuData.default.menu2.submenus.map((submenu) => (
+          <a key={submenu.url} href={submenu.url} className={submenu.classes}>
+            {submenu.label}
           </a>
         ))}
       </nav>
     </div>
-     </div>
   );
 };
 
 export default Sidebar;
+
+
+
+
+// import React from 'react';
+// import MenuData from './MenuData'; // Import your MenuData object
+
+// const Sidebar = () => {
+//   return (
+//     <div className="flex flex-col bg-white border border-gray-200 w-60 h-screen bg-gray-100 sm:w-60 md:w-72 lg:w-80 xl:w-96">
+//       {/* Render the main menu items */}
+//       <nav>
+//         {MenuData.default.menu && (
+//           <a href={MenuData.default.menu.url} className={MenuData.default.menu.classes}>
+//             {MenuData.default.menu.label}
+//           </a>
+//         )}
+//       </nav>
+      
+
+//       {/* Render the submenus */}
+//       <nav>
+//         {MenuData.default.menu.submenus.map((submenu) => (
+//           <a key={submenu.url} href={submenu.url} className={submenu.classes}>
+//             {submenu.label}
+//           </a>
+//         ))}
+//       </nav>
+//     </div>
+//   );
+// };
+
+// export default Sidebar;
