@@ -1,5 +1,8 @@
-import React from 'react'
-import LandingBody from './LandingBody'
+
+import React from 'react';
+import LandingBody from '../landing/LandingBody';
+
+
 
 const Landing = () => {
   return (

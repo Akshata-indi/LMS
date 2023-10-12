@@ -15,7 +15,7 @@ const Body1 = () => {
   const cardToRender = cardsConfig.find((card) => card.id === cardIdToRender);
 
   // Define the number of times you want to render the card
-  const numberOfTimesToRender = 6; // Change this as needed
+  const numberOfTimesToRender = 2; // Change this as needed
 
   // Create an array of card elements to render
   const cardElements = Array(numberOfTimesToRender).fill().map((_, index) => (
@@ -28,7 +28,7 @@ const Body1 = () => {
 
   return (
     <div className='grid-cols-1 sm:grid-cols-6 md:grid-cols-3 lg:grid-cols-4 gap-8'>
-      <div className='grid grid-cols-6 gap-2  grid-flow-row '>
+      <div className='grid grid-cols-3 gap-2  grid-flow-row '>
         {cardElements}
       </div>
     </div>
