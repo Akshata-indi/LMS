@@ -1,11 +1,13 @@
 import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import axios from 'axios';
+import { API_ENDPOINTS } from '../../api/Api';
 import TwdButtonsConfig from '../buttons/TwdButtonsConfig';
 import TailwindInputsConfig from '../inputs/TailwindInputsConfig';
-import signupConfig from './signupConfig.json';
+import registerConfig from './registerConfig.json' // Import the configuration file
 
-const SignupForm = () => {
+const registerForm = () => {
   const inputStyle = TailwindInputsConfig.standard;
 
   const validationSchema = Yup.object({
@@ -27,9 +29,8 @@ const SignupForm = () => {
       confirmPassword: '',
     },
     validationSchema,
-    onSubmit: async (values, { resetForm }) => {
+    onSubmit: async (values, { reset }) => {
       try {
-        // Simulate token generation (for testing purposes)
         const userData = {
           firstName: values.firstName,
           lastName: values.lastName,
@@ -37,19 +38,14 @@ const SignupForm = () => {
           password: values.password,
         };
 
-        // Simulate token generation (for testing purposes)
-        const response = await fakeRegisterUser(userData);
+        // Send a POST request to your signup API endpoint using Axios and the API configuration
+        const response = await axios.post(API_ENDPOINTS.SIGNUP, userData);
 
-        if (response.token) {
-          // Token received, log it to the console
-          console.log('JWT Token:', response.token);
-
-          // Optionally, you can save it securely (e.g., in local storage)
-
-          // Redirect to the logged-in state or dashboard
-          // window.location.href = '/dashboard'; // Change this to your dashboard URL
-        } else {
-          console.error('No token received.');
+        if (response) {
+          // Data was successfully saved
+          console.log('User data saved successfully.');
+          alert('User data saved successfully.');
+          formik.resetForm();
         }
       } catch (error) {
         console.error('Error:', error);
@@ -57,30 +53,17 @@ const SignupForm = () => {
     },
   });
 
-  // Simulate token generation function (for testing purposes)
-  const fakeRegisterUser = async (userData) => {
-    // Simulate API call and token generation
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        // Simulate a successful response with a token
-        const token = 'your-fake-jwt-token';
-        resolve({ token });
-      }, 1000); // Simulate a delay
-    });
-  };
-
   return (
     <div className="mx-auto mt-2 p-4 sm:p-8 md:p-10 bg-white rounded-xl border-2 flex flex-col items-center">
       <form className="w-full" onSubmit={formik.handleSubmit}>
         <p className="mt-4 sm:mt-8 text-gray-500 font-sans text-lg font-semibold">
-          {signupConfig.title}
+          {registerConfig.title}
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {/* First Name */}
           <input
             className={inputStyle}
             type="text"
-            placeholder={signupConfig.firstNameLabel}
+            placeholder={registerConfig.firstNameLabel}
             name="firstName"
             value={formik.values.firstName}
             onChange={formik.handleChange}
@@ -89,12 +72,10 @@ const SignupForm = () => {
           {formik.touched.firstName && formik.errors.firstName && (
             <div className="text-red-500">{formik.errors.firstName}</div>
           )}
-
-          {/* Last Name */}
           <input
             className={inputStyle}
             type="text"
-            placeholder={signupConfig.lastNameLabel}
+            placeholder={registerConfig.lastNameLabel}
             name="lastName"
             value={formik.values.lastName}
             onChange={formik.handleChange}
@@ -103,12 +84,10 @@ const SignupForm = () => {
           {formik.touched.lastName && formik.errors.lastName && (
             <div className="text-red-500">{formik.errors.lastName}</div>
           )}
-
-          {/* Email */}
           <input
             className={inputStyle}
             type="email"
-            placeholder={signupConfig.emailLabel}
+            placeholder={registerConfig.emailLabel}
             name="email"
             value={formik.values.email}
             onChange={formik.handleChange}
@@ -117,12 +96,10 @@ const SignupForm = () => {
           {formik.touched.email && formik.errors.email && (
             <div className="text-red-500">{formik.errors.email}</div>
           )}
-
-          {/* Password */}
           <input
             className={inputStyle}
             type="password"
-            placeholder={signupConfig.passwordLabel}
+            placeholder={registerConfig.passwordLabel}
             name="password"
             value={formik.values.password}
             onChange={formik.handleChange}
@@ -131,12 +108,10 @@ const SignupForm = () => {
           {formik.touched.password && formik.errors.password && (
             <div className="text-red-500">{formik.errors.password}</div>
           )}
-
-          {/* Confirm Password */}
           <input
             className={inputStyle}
             type="password"
-            placeholder={signupConfig.confirmPasswordLabel}
+            placeholder={registerConfig.confirmPasswordLabel}
             name="confirmPassword"
             value={formik.values.confirmPassword}
             onChange={formik.handleChange}
@@ -149,7 +124,7 @@ const SignupForm = () => {
 
         <div className="text-center mt-5">
           <button type="submit" className={`${TwdButtonsConfig.primary} text-lg`}>
-            {signupConfig.submitButtonLabel}
+            {registerConfig.submitButtonLabel}
           </button>
         </div>
       </form>
@@ -157,4 +132,4 @@ const SignupForm = () => {
   );
 };
 
-export default SignupForm;
+export default registerForm;

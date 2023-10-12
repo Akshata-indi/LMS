@@ -15,6 +15,10 @@ module.exports = {
       'desktop': '1280px',
       // => @media (min-width: 1280px) { ... }
     },
+
+    backgroundColor: {
+      'custom-color': '#6366F1',
+    },
   },
   plugins: [],
 }

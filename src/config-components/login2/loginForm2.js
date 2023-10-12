@@ -2,16 +2,18 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import axios from 'axios';
 import TailwindInputsConfig from '../inputs/TailwindInputsConfig';
-import TwdButtonsConfig from '../buttons/TwdButtonsConfig';
+import TwdButtonsConfig from '../buttons/TwdButtonsConfig'
 import { BsBoxArrowInRight } from 'react-icons/bs';
 
-const LoginForm = () => {
+const loginForm2 = () => {
   const inputStyle = TailwindInputsConfig.standard;
   const navigate = useNavigate();
   const validationSchema = Yup.object({
-    email: Yup.string().required('Email is required').email('Invalid email format'),
-    password: Yup.string().required('Password is required'),
+    
+  email: Yup.string().required('Email is required').email('Invalid email format'),
+  password: Yup.string().required('Password is required'),
   });
 
   const formik = useFormik({
@@ -20,43 +22,35 @@ const LoginForm = () => {
       password: '',
     },
     validationSchema,
-    onSubmit: async (values) => {
+    onSubmit: async (values, { resetForm }) => {
       try {
-        // Mocking a successful login response with a JWT token
-        const mockResponse = {
-          data: {
-            token: 'your_mocked_jwt_token_here',
-          },
-        };
+        const response = await axios.get(`http://localhost:3001/data?email=${values.email}&password=${values.password}`);
+        const loginUser = response.data;
 
-        // Simulate a delay to mimic a network request
-        setTimeout(() => {
-          handleLoginSuccess(mockResponse);
-        }, 1000);
+        if (loginUser) {
+          navigate('/landing');
+        }
       } catch (error) {
-        console.log(error);
-        alert('Invalid user');
+          console.log(error);
+          alert('Invalid user');
       }
     },
   });
 
-  const handleLoginSuccess = (response) => {
-    if (response.data.token) {
-      // Token received, save it to localStorage (for testing purposes)
-      localStorage.setItem('token', response.data.token);
-
-      // Redirect or perform other actions upon successful login
-      navigate('/landing');
-
-      // Log the token to the console (for testing purposes)
-      console.log('JWT Token:', response.data.token);
-    }
-  };
-
   return (
     <div className="flex flex-col items-center justify-center mt-12 bg-white">
-      <div className="mx-auto mt-2 p-10 bg-white rounded-xl shadow-2xl flex flex-col items-center">
-        <BsBoxArrowInRight className="text-6xl text-blue-600 mb-4" />
+      <div className="mx-auto mt-2 p-10 bg-white rounded-xl  flex flex-col">
+
+        {/* <BsBoxArrowInRight className="text-6xl text-blue-600 mb-4" /> */}
+
+        <h1 className="text-2xl font-bold text-gray-00 p-0">Log in</h1>
+        <p className="mt-8 text-gray-600 font-sans text-xs font-semibold">
+              Welcome to the Infokalash, please enter your login credentials 
+        </p>
+        <p className=" text-gray-600 font-sans text-xs font-semibold">
+        below to start using the application
+        </p>
+
         <form className="w-full" onSubmit={formik.handleSubmit}>
           <div className="grid grid-cols-1">
             <input
@@ -85,42 +79,47 @@ const LoginForm = () => {
             )}
           </div>
 
-          <div className="mb-6 mt-5 flex items-center justify-between font-sans text-sm font-semibold">
-            <div className="flex items-center">
-              <input type="checkbox" id="rememberMe" className="mr-2" />
-              <label htmlFor="rememberMe" className="text-gray-500 mr-10">
-                Remember Me
-              </label>
-            </div>
-            <div className="text-right">
+          <div className="text-right font-sans text-sm font-semibold">
               <Link to="/" className="text-gray-500 hover:underline">
                 Forgot Password?
               </Link>
             </div>
-          </div>
 
-          <div className="text-center">
-            <button type="submit" className={`${TwdButtonsConfig.primary}`}>
+          <div className="mb-6 mt-5 flex items-center justify-between font-sans text-sm font-semibold">
+            
+            <div className="flex items-center">
+              <input
+                type="checkbox"
+                id="rememberMe"
+                className="mr-2"
+              />
+              <label htmlFor="rememberMe" className="text-gray-500 mr-10">
+                Remember Me
+              </label>
+            </div>
+            
+          <button type="submit">
               Login
             </button>
 
+          </div>
+
+          <div className="text-center">
             <p className="mt-8 text-gray-600 font-sans text-xs font-semibold">
               Don't have an account?{' '}
-              <Link to="/signup" className="text-blue-600 hover:underline">
-                Sign up
+              <Link to="/register" className="text-blue-600 hover:underline">
+                 Create Account
               </Link>
             </p>
           </div>
+
         </form>
       </div>
-      <p className="mt-8 text-gray-500 font-sans text-sm font-semibold">
-        Ready to get started?
-      </p>
-      <p className="mt-2 text-gray-500 font-sans text-sm font-semibold">
-        Launch Your Project with Us
-      </p>
+      <div className="text-center text-gray-600 text-xs mt-2 font-sans">
+        &copy; {new Date().getFullYear()} Your Company Name. All Rights Reserved.
+      </div>
     </div>
   );
 };
 
-export default LoginForm;
+export default loginForm2;
