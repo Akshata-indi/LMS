@@ -7,7 +7,8 @@ import TwdButtonsConfig from '../buttons/TwdButtonsConfig';
 import Sidebar from '../../sidebar/Sidebar';
 import Body1 from '../cards/Body1';
 import Search from '../header/Search';
-import Body2 from '../cards/Body2';
+import Body2 from '../employee/Body2';
+import Card from '../employee/Card';
 
 const LandingBody = () => {
   // Choose the button configuration you want to use (e.g., "primary")
@@ -30,8 +31,9 @@ const LandingBody = () => {
             <div className='grid  px-1 py-3 flex justify-self-end items-end'>
               <Search className='mx-2' />
               <Body1 />
-              <Body2 />
+              {/* <Body2 /> */}
               <Body1 />
+              {/* <Card /> */}
             </div>
           </div>
         </div>
