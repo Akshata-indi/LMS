@@ -1,6 +1,6 @@
 
 import React from 'react'
-// import LogoConfig from '../logo/LogoConfig';
+import LogoConfig from '../logo/LogoConfig';
 
 const Header1 = () => {
     return (
@@ -8,11 +8,16 @@ const Header1 = () => {
 
             <div className='grid grid-cols-1 grid-flow-row'>
 
+                <div className='grid grid-cols-12 bg-white shadow-sm min-h-[70px] border flex  justify-between items-center'>
+                    <LogoConfig />
+
+
                 <div className='grid grid-cols-12 w-screen bg-white shadow-md min-h-[70px] flex items-center'>
 
                 <div className='grid grid-cols-12 bg-white shadow-sm min-h-[70px] border border-gray-500 flex  justify-between items-center'>
 
                     {/* <LogoConfig /> */}
+
                 </div>
             </div>
         </div>
