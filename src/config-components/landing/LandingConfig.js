@@ -1,22 +1,27 @@
-const LandingConfig ={
-   
-  
-  "profile": {
-      "avatar": "rounded-full h-12 w-12",
-      "username": "text-lg font-semibold text-gray-800",
-      "email": "text-sm text-gray-600"
+// headerConfig.js
+
+const LandingConfig = {
+  default: 
+  {
+     profile: {
+      avatar: "rounded-full h-12 w-12",
+      username: "text-lg font-semibold text-gray-800",
+      email: "text-sm text-gray-600",
     },
-    "logo": {    
-      "container": "flex items-center space-x-2",
-      "image": "h-8 w-8",
-      "text": "text-xl font-bold text-indigo-700"
-    },
-     
     buttons: {
-      primary: "bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded",
-      secondary: "bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded",
-      danger: "bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded"
-    },
-  };
-  export default LandingConfig;
+      primary: 'bg-blue-500 hover:bg-blue-700 text-white  font-bold py-2 px-6 text-sm rounded  ',
+      transparent: 'bg-transparent hover:bg-blue-700 font-semibold text-blue-700 font-bold py-4 px-12 my-2 mx-4 border border-blue-500 hover:border-transparent rounded',
+      hover : 'text-center border border-gray-300 rounded hover:border-gray-200 font-semibold text-sm text-blue-700 hover:bg-gray-300 py-2 px-6  ',
   
+    },
+    Header1: 'grid grid-cols-12 w-screen bg-white shadow-sm min-h-[70px] flex items-center',
+    
+    Sidebar : 'flex bg-white border border-r-gray-200 w-60 '
+    
+    
+  },
+  
+  
+};
+
+export default LandingConfig;

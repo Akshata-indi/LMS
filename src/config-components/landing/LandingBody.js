@@ -1,52 +1,45 @@
+
+
 import React from 'react';
-
-import Header1 from '../header/Header1';
-
-import Header1 from '../config-components/header/Header1';
-import Sidebar from '../sidebar/Sidebar';
-import Body1 from '../config-components/cards/Body1';
-import Body2 from '../config-components/cards/Body2';
-
+import LandingConfig from './LandingConfig';
+import LogoConfig from '../logo/LogoConfig';
+import TwdButtonsConfig from '../buttons/TwdButtonsConfig';
+import Sidebar from '../../sidebar/Sidebar';
+import Body1 from '../cards/Body1';
+import Search from '../header/Search';
+import Body2 from '../employee/Body2';
+import Card from '../employee/Card';
 
 const LandingBody = () => {
-   
-    return (
-        <div className='grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8'>
+  // Choose the button configuration you want to use (e.g., "primary")
+  const buttonConfig = LandingConfig.default.Header1;
 
-            <div className='grid grid-rows-[auto,1fr] '>
-                    <Header1  /> 
-                    <div>
-                        hl0121
-                    </div>
-{/*                     
-=======
-            <div className='grid grid-rows-[auto,1fr]'>
-                <Header1 />
-
-
->>>>>>> master:src/LandingConfig/LandingBody.js
-                <div className='grid grid-cols-12 gap-4'>
-
-                    <div className='col-span-2'>
-                        <Sidebar />
-                    </div>
-
-
-                    <div className='col-span-10'>
-                        {/* <div className='grid mx-10 my-10 grid-flow-row'> */}
-                        <div className='grid grid-rows-[auto,1fr] mx-2 px-4 py-4'>
-
-                            <Header1 />
-                            </div>
-                            <Body1 />
-                            <Body2 />
-                            
-                        </div>
-                    </div> 
-                
-         
-        // </div>
-    );
+  return (
+    <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 '>
+      <div className={buttonConfig}>
+        <div className='col-span-12 flex mx-5 justify-between items-center'>
+          <LogoConfig />
+          <button className={` ${LandingConfig.default.buttons.primary} ml-6  `}>
+            Contact us
+          </button>
+        </div>
+      </div>
+      <div className='col-span-2'>  
+        <div className='flex'>
+          <Sidebar />
+          <div className='col-span-10'>
+            <div className='grid  px-1 py-3 flex justify-self-end items-end'>
+              <Search className='mx-2' />
+              <Body1 />
+              {/* <Body2 /> */}
+              <Body1 />
+              {/* <Card /> */}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default LandingBody;
