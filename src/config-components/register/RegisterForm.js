@@ -6,6 +6,9 @@ import { API_ENDPOINTS } from '../../api/Api';
 import TwdButtonsConfig from '../buttons/TwdButtonsConfig';
 import TailwindInputsConfig from '../inputs/TailwindInputsConfig';
 import registerConfig from './registerConfig.json' // Import the configuration file
+import { TfiEmail } from "react-icons/tfi";
+import { TbLock } from "react-icons/tb";
+import { Link } from 'react-router-dom';
 
 const registerForm = () => {
   const inputStyle = TailwindInputsConfig.standard;
@@ -54,12 +57,16 @@ const registerForm = () => {
   });
 
   return (
-    <div className="mx-auto mt-2 p-4 sm:p-8 md:p-10 bg-white rounded-xl border-2 flex flex-col items-center">
+    <>
+    <div className="mx-auto sm:p-8 md:p-2 bg-white flex flex-col">
+    <h1 className="text-2xl font-bold text-gray-00 p-0">Create Account</h1>
+    <p className="mt-4 mb-4 text-gray-500 font-sans text-xs font-semibold">
+      Welcome to the Infokalash, please enter the details below
+    </p>
       <form className="w-full" onSubmit={formik.handleSubmit}>
-        <p className="mt-4 sm:mt-8 text-gray-500 font-sans text-lg font-semibold">
-          {registerConfig.title}
-        </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 text-xs">
+          
           <input
             className={inputStyle}
             type="text"
@@ -120,15 +127,46 @@ const registerForm = () => {
           {formik.touched.confirmPassword && formik.errors.confirmPassword && (
             <div className="text-red-500">{formik.errors.confirmPassword}</div>
           )}
-        </div>
+          
+          <div className="flex items-center mt-5 text-xs">
+              <input
+                type="checkbox"
+                id="rememberMe"
+                className="mr-2"
+              />
+              <label htmlFor="rememberMe" className="text-gray-500 mr-10">
+                I've read and accept the Terms of Service
+              </label>
+          </div>
 
-        <div className="text-center mt-5">
-          <button type="submit" className={`${TwdButtonsConfig.primary} text-lg`}>
-            {registerConfig.submitButtonLabel}
-          </button>
+          <div className="flex items-center mt-4 text-xs">
+              <input
+                type="checkbox"
+                id="rememberMe"
+                className="mr-2"
+              />
+              <label htmlFor="rememberMe" className="text-gray-500 mr-10">
+                Subscribe to the newsletter to stay up to date
+              </label>
+          </div>
+
+          <button type="submit" className={`${TwdButtonsConfig.hover} mt-8`}>
+              Login
+            </button>
+
+            <div className="text-center">
+            <p className="mt-12 text-gray-600 font-sans text-xs font-semibold">
+              Already have an account?{' '}
+              <Link to="/loginForm" className="text-blue-600 hover:underline">
+                Login
+              </Link>
+            </p>
+          </div>
+
         </div>
       </form>
     </div>
+    </>
   );
 };
 
