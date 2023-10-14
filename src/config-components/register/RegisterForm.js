@@ -150,7 +150,7 @@ const registerForm = () => {
               </label>
           </div>
 
-          <button type="submit" className={`${TwdButtonsConfig.hover} mt-8`}>
+          <button type="submit" className='mt-8'>
               Login
             </button>
 

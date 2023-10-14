@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LoginForm2 from './loginForm2';
-import Landing from '../../LandingConfig/Landing';
+import Landing from '../landing/Landing'
 import Header1 from '../header/Header1';
 import Register from '../register/Register';
 import { Carousel } from 'react-responsive-carousel';
