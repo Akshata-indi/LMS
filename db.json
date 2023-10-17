@@ -5,16 +5,22 @@
       "lastName": "k",
       "email": "vinay@gmail.com",
       "password": "123123",
-      
       "id": 1
     },
     {
-    
       "firstName": "asd",
       "lastName": "fgh",
       "email": "qwe@gmail.com",
       "password": "123123",
       "id": 2
+    },
+    {
+      "firstName": "vinayaa",
+      "lastName": "pole",
+      "email": "pole.shashank@infokalash.com",
+      "password": "12345678",
+      "confirmPassword": "12345678",
+      "id": 3
     }
   ]
 }
