@@ -2,47 +2,36 @@ import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
-import { API_ENDPOINTS } from '../../api/Api';
 import TwdButtonsConfig from '../buttons/TwdButtonsConfig';
 import TailwindInputsConfig from '../inputs/TailwindInputsConfig';
-import registerConfig from './registerConfig.json' // Import the configuration file
-import { TfiEmail } from "react-icons/tfi";
-import { TbLock } from "react-icons/tb";
+import { API_ENDPOINTS } from '../../api/Api';
 import { Link } from 'react-router-dom';
+import { AiOutlineUser } from 'react-icons/ai';
+import { BiBuildings } from 'react-icons/bi';
+import { PiKey } from 'react-icons/pi';
+import { TfiEmail } from "react-icons/tfi";
+import registerConfig from './registerConfig.json' // Import the configuration file
 
-const registerForm = () => {
+const RegisterForm = () => {
   const inputStyle = TailwindInputsConfig.standard;
 
   const validationSchema = Yup.object({
     firstName: Yup.string().required('First Name is required'),
     lastName: Yup.string().required('Last Name is required'),
-    email: Yup.string().required('Email is required').email('Invalid email format'),
-    password: Yup.string().required('Password is required'),
-    confirmPassword: Yup.string()
-      .required('Confirm Password is required')
-      .oneOf([Yup.ref('password'), null], 'Passwords must match'),
+    // Add more validation rules for other fields (email, password, confirmPassword)
   });
 
   const formik = useFormik({
     initialValues: {
       firstName: '',
       lastName: '',
-      email: '',
-      password: '',
-      confirmPassword: '',
+      // Add more fields here for email, password, and confirmPassword
     },
     validationSchema,
-    onSubmit: async (values, { reset }) => {
+    onSubmit: async (values) => {
       try {
-        const userData = {
-          firstName: values.firstName,
-          lastName: values.lastName,
-          email: values.email,
-          password: values.password,
-        };
-
         // Send a POST request to your signup API endpoint using Axios and the API configuration
-        const response = await axios.post(API_ENDPOINTS.SIGNUP, userData);
+        const response = await axios.post(API_ENDPOINTS.SIGNUP, values);
 
         if (response) {
           // Data was successfully saved
@@ -58,41 +47,56 @@ const registerForm = () => {
 
   return (
     <>
-    <div className="mx-auto sm:p-8 md:p-2 bg-white flex flex-col">
-    <h1 className="text-2xl font-bold text-gray-00 p-0">Create Account</h1>
-    <p className="mt-4 mb-4 text-gray-500 font-sans text-xs font-semibold">
-      Welcome to the Infokalash, please enter the details below
-    </p>
-      <form className="w-full" onSubmit={formik.handleSubmit}>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 text-xs">
-          
+      <div className="mx-auto sm:p-8 md:p-2 bg-white flex flex-col">
+        <h1 className="text-2xl font-bold text-gray-00 p-0">Create Account</h1>
+
+      <p className="mt-4 mb-4 text-gray-500 font-sans text-xs font-semibold">
+        Welcome to the Infokalash, please enter the details below
+      </p>
+      <form className="w-full" onSubmit={formik.handleSubmit}> {/* Use formik.handleSubmit here */}
+          <div className="grid grid-cols-1 text-xs">
+            <div className="relative">
+              <div className="absolute top-1/2 left-2 transform -translate-y-1/2">
+                <AiOutlineUser className=" text-xl text-gray-400" />
+              </div>
+              <input
+                className={`${inputStyle} w-full ml-10`}
+                type="text"
+                placeholder="First Name"
+                name="firstName"
+                value={formik.values.firstName}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+              />
+            </div>
+            {formik.touched.firstName && formik.errors.firstName && (
+              <div className="text-red-500">{formik.errors.firstName}</div>
+            )}
+
+            <div className="relative">
+              <div className="absolute top-1/2 left-2 transform -translate-y-1/2">
+                <BiBuildings className=" text-xl text-gray-400" />
+              </div>
+              <input
+                className={`${inputStyle} w-full ml-10`}
+                type="text"
+                placeholder="Last Name"
+                name="lastName"
+                value={formik.values.lastName}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+              />
+            </div>
+            {formik.touched.lastName && formik.errors.lastName && (
+              <div className="text-red-500">{formik.errors.lastName}</div>
+            )}
+
+          <div className="relative">
+          <div className="absolute top-1/2 left-2 transform -translate-y-1/2">
+          <TfiEmail className=" text-xl text-gray-400"/>
+          </div>
           <input
-            className={inputStyle}
-            type="text"
-            placeholder={registerConfig.firstNameLabel}
-            name="firstName"
-            value={formik.values.firstName}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-          />
-          {formik.touched.firstName && formik.errors.firstName && (
-            <div className="text-red-500">{formik.errors.firstName}</div>
-          )}
-          <input
-            className={inputStyle}
-            type="text"
-            placeholder={registerConfig.lastNameLabel}
-            name="lastName"
-            value={formik.values.lastName}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-          />
-          {formik.touched.lastName && formik.errors.lastName && (
-            <div className="text-red-500">{formik.errors.lastName}</div>
-          )}
-          <input
-            className={inputStyle}
+            className={`${inputStyle} w-full ml-10`}
             type="email"
             placeholder={registerConfig.emailLabel}
             name="email"
@@ -100,11 +104,17 @@ const registerForm = () => {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
           />
+          </div>
           {formik.touched.email && formik.errors.email && (
             <div className="text-red-500">{formik.errors.email}</div>
           )}
+
+          <div className="relative">
+          <div className="absolute top-1/2 left-2 transform -translate-y-1/2">
+          <PiKey className="text-xl text-gray-400"/>
+          </div>
           <input
-            className={inputStyle}
+            className={`${inputStyle} w-full ml-10`}
             type="password"
             placeholder={registerConfig.passwordLabel}
             name="password"
@@ -112,11 +122,17 @@ const registerForm = () => {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
           />
+          </div>
           {formik.touched.password && formik.errors.password && (
             <div className="text-red-500">{formik.errors.password}</div>
           )}
+
+          <div className="relative">
+          <div className="absolute top-1/2 left-2 transform -translate-y-1/2">
+          <PiKey className="text-xl text-gray-400"/>
+          </div>
           <input
-            className={inputStyle}
+            className={`${inputStyle} w-full ml-10`}
             type="password"
             placeholder={registerConfig.confirmPasswordLabel}
             name="confirmPassword"
@@ -124,10 +140,12 @@ const registerForm = () => {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
           />
+          </div>
           {formik.touched.confirmPassword && formik.errors.confirmPassword && (
             <div className="text-red-500">{formik.errors.confirmPassword}</div>
           )}
           
+
           <div className="flex items-center mt-5 text-xs">
               <input
                 type="checkbox"
@@ -150,19 +168,18 @@ const registerForm = () => {
               </label>
           </div>
 
-          <button type="submit" className='mt-8'>
-              Login
-            </button>
+          <button type="submit" className={`${TwdButtonsConfig.transparent} mt-8`}>
+            Register
+          </button>
 
-            <div className="text-center">
-            <p className="mt-12 text-gray-600 font-sans text-xs font-semibold">
+          <div className="text-center">
+            <p className="mt-8 text-gray-600 font-sans text-xs font-semibold">
               Already have an account?{' '}
-              <Link to="/loginForm" className="text-blue-600 hover:underline">
+              <Link to="/loginForm2" className="text-blue-600 hover:underline">
                 Login
               </Link>
             </p>
           </div>
-
         </div>
       </form>
     </div>
@@ -170,4 +187,5 @@ const registerForm = () => {
   );
 };
 
-export default registerForm;
+export default RegisterForm;
+

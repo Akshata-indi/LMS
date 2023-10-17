@@ -1,10 +1,20 @@
 {
-    "title": "Create a Learning Management System Account",
-    "firstNameLabel": "First Name",
-    "lastNameLabel": "Last Name",
-    "emailLabel": "Email Id",
-    "passwordLabel": "Password",
-    "confirmPasswordLabel": "Confirm Password",
-    "submitButtonLabel": "Submit"
-  }
-  
+  "title": "Create a Learning Management System Account",
+  "firstNameLabel": "First Name",
+  "lastNameLabel": "Last Name",
+  "emailLabel": "Email Id",
+  "passwordLabel": "Password",
+  "confirmPasswordLabel": "Confirm Password",
+  "submitButtonLabel": "Register",
+  "firstNameRequiredMessage": "First Name is required",
+  "lastNameRequiredMessage": "Last Name is required",
+  "emailRequiredMessage": "Email is required",
+  "emailInvalidMessage": "Invalid email format",
+  "passwordRequiredMessage": "Password is required",
+  "confirmPasswordRequiredMessage": "Confirm Password is required",
+  "confirmPasswordMatchMessage": "Passwords must match",
+  "termsOfServiceLabel": "I've read and accept the Terms of Service",
+  "newsletterLabel": "Subscribe to the newsletter to stay up to date",
+  "alreadyHaveAccountLabel": "Already have an account?",
+  "loginLabel": "Login"
+}
