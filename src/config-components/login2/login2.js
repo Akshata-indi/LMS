@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LoginForm2 from './loginForm2';
-import Landing from '../../LandingConfig/Landing';
+import Landing from '../landing/Landing';
 import Header1 from '../header/Header1';
 import Register from '../register/Register';
 import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css'; // Import the styles
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import lms1 from '../../assets/images/lms1.png';
 
 function Login2() {
@@ -33,14 +33,14 @@ function Login2() {
             <Routes>
               <Route path="/" element={<LoginForm2 />} />
               <Route path="/register" element={<Register />} />
-              
               <Route path="/landing" element={<Landing />} />
             </Routes>
           </Router>
         </div>
 
-        {/* Right Side - Image Slider */}
+        {/* Right Side - Image Slider and Scrolling Container */}
         <div className="w-1/2 bg-custom-color p-8 flex flex-col items-center justify-center relative">
+          {/* Image Carousel */}
           <Carousel showThumbs={false} width="300px">
             <div className="w-64 h-64 flex items-center justify-center">
               <img src={lms1} alt="lms1" />
@@ -54,9 +54,9 @@ function Login2() {
           </Carousel>
 
           {/* Additional content below the image */}
-          <div className="mt-20 text-center">
-            <h2></h2>
-            <p>Welcome To New Age Learning Platform</p>
+          <div className="mt-6 text-center">
+            <p className='text-white text-lg font-semibold'>Welcome To New Age Learning Platform</p>
+            <p className='mt-2 text-xs'>Unlock Your Learning Potential With Infokalash</p>
           </div>
 
           {/* Left and Right Arrow Buttons */}
@@ -74,6 +74,8 @@ function Login2() {
           </button>
         </div>
       </div>
+
+      {/* Copyright Text */}
       <div className="absolute bottom-0 left-0 ml-5 mb-2 text-gray-400 text-xs font-sans">
         &copy; {new Date().getFullYear()} Infokalash, All Rights Reserved | communications@infokalash.com
       </div>

@@ -18,7 +18,6 @@ const LandingConfig = {
     
     Sidebar : 'flex bg-white border border-r-gray-200 w-60 '
     
-    
   },
   
   

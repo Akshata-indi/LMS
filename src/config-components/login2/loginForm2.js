@@ -57,7 +57,7 @@ const loginForm2 = () => {
                 <TfiEmail className="text-gray-400"/>
               </div>
               <input
-                className={`${inputStyle} ml-10`}
+                className={`${inputStyle} w-full ml-10`}
                 type="email"
                 name="email"
                 placeholder="Email / Username"
@@ -74,7 +74,7 @@ const loginForm2 = () => {
                 <TbLock className="text-xl text-gray-400"/>
               </div>
               <input
-                className={`${inputStyle} ml-10`}
+                className={`${inputStyle}w-full ml-10`}
                 type="password"
                 name="password"
                 placeholder="Password"
@@ -107,7 +107,7 @@ const loginForm2 = () => {
                 Remember Me
               </label>
             </div>
-            <button type="submit">
+            <button type="submit" className={`${TwdButtonsConfig.transparent}`}>
               Login
             </button>
           </div>
